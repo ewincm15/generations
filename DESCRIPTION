@@ -1,11 +1,15 @@
 Package: generations
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Calculate the Number of Generations in a Numeric Vector
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Authors@R:
+	person(given = "Claire", 
+		family = "Ewing", 
+		role = c("aut", "cre"), 
+		email = "candn010217@gmail.com")
+Maintainer: The package maintainer <candn010217@gmail.com>
+Description: `generations` contains the function `gen`, which calculates the number of “generations” since the first value in a variable. It is imagined for use with years, but can be used with any dbl variable. It sort()s the variable chronologically and then calculates the number of generations between observations.
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+RoxygenNote: 7.1.1
