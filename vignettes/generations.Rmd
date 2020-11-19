@@ -1,0 +1,34 @@
+---
+title: "generations"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{generations}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(generations)
+```
+
+A few notes on how `generations` works: 
+
+1. `gen` uses the `ceiling()` function to round up to the nearest whole number. This is consistent with the standard usage of "generations" in studies; it typically does not make sense for them to be referred to in anything but whole numbers. 
+2. `generationtime` is the value in the denominator in the function; or in the generations imagining, the number of years in each generation. The default is 25, because human generations are 25 years, but this can be changed in the input, as is demonstrated below. 
+
+This is how generations works, demonstrated through a few examples: 
+
+```{r}
+gen(c(1559, 1996, 1448, 1668, 1773)) #basic example
+hist(gen(c(1559, 1996, 1448, 1668, 1773))) #histogram of basic example
+gen(c(1559, 1996, 1448, 1668, 1773), generationtime = 10) #generationtime is changed to 10
+(max(gen(c(1559, NA, 1448, NA, 1773)))) - (min(gen(c(1559, NA, 1448, NA, 1773)))) #calculations with output, as well as use of NAs in input vector
+
+```
